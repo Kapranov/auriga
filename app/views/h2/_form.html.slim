@@ -1,0 +1,45 @@
+= form_for @h2 do |f|
+  - if @h2.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@h2.errors.count, "error")} prohibited this h2 from being saved:"
+      ul
+        - @h2.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :mac
+    = f.text_field :mac
+  .field
+    = f.label :ip
+    = f.text_field :ip
+  .field
+    = f.label :abon_id
+    = f.number_field :abon_id
+  .field
+    = f.label :tp
+    = f.text_field :tp
+  .field
+    = f.label :def_gw
+    = f.text_field :def_gw
+  .field
+    = f.label :vlan
+    = f.number_field :vlan
+  .field
+    = f.label :netmask
+    = f.text_field :netmask
+  .field
+    = f.label :'1dns'
+    = f.text_field :'1dns'
+  .field
+    = f.label :'2dns'
+    = f.text_field :'2dns'
+  .field
+    = f.label :sw_port
+    = f.number_field :sw_port
+  .field
+    = f.label :blocked
+    = f.text_field :blocked
+  .field
+    = f.label :comment
+    = f.text_field :comment
+  .actions = f.submit 'Save'

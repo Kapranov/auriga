@@ -1,0 +1,63 @@
+.nav class="navbar navbar-fixed-top"
+  .container
+    .navbar-header
+      button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+        span class="icon-bar"
+        span class="icon-bar"
+        span class="icon-bar"
+      a class="navbar-brand" href="#" = I18n.t 'Adamant'
+    div class="collapse navbar-collapse navbar-ex1-collapse"
+      ul class="nav navbar-nav"
+        li class="active"
+          a href="#" Home
+        li
+          a href="#about" About
+        li
+          a href="#contact" Contact
+        li class="dropdown"
+          a href="#" class="dropdown-toggle" data-toggle="dropdown" Dropdown
+          b class="caret"
+          ul class="dropdown-menu"
+            li
+              a href="#" Action
+            li
+              a href="#" Another action
+            li
+              a href="#" Something else here
+            li class="divider"
+            li class="dropdown-header" Nav header
+            li
+              a href="#" Separated link
+            li
+              a href="#" One more separated link
+.container
+  .row
+    .col-md-12
+      table class="table table-striped table-bordered"
+        tr class="success"
+          th = I18n.t 'Abon'
+          th = I18n.t 'Blocked'
+          th = I18n.t 'Mac'
+          th = I18n.t 'Ip'
+          th = I18n.t 'Tp'
+          th = I18n.t 'Sw port'
+          th = I18n.t 'Vlan'
+          th
+          th
+          th
+
+        - @h2.each do |h2|
+          tr
+            td = h2.abon_id
+            td = h2.blocked
+            td = h2.mac
+            td = h2.ip
+            td = h2.tp
+            td = h2.sw_port
+            td = h2.vlan
+            td = link_to ' ', h2, :class => "glyphicon glyphicon-eye-open"
+            td = link_to ' ', edit_h2_path(h2), :class => "glyphicon glyphicon-edit"
+            td = link_to ' ', h2, :confirm => 'Are you sure?', :method => :delete, :class => "glyphicon glyphicon-trash"
+      br
+
+      = will_paginate @h2, :renderer => BootstrapPagination::Rails

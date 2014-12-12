@@ -1,0 +1,20 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+    </div>
+    <div class="navbar-collapse collapse">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <h3>Home#index</h3>
+    <a class="butt butt-small" data-test="fadeOutUp">Find me in app</a>
+
+    <header class="masthead">
+      <a class="bootstrap-logo" href="/" title="Home">
+        <%= image_tag("apple-touch-icon-144-precomposed.png", :alt => "test" ) %>
+      </a>
+    </header>
+  </div>
+</div>

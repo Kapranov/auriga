@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  mac: MyString
+  ip: MyString
+  abon_id: 1
+  tp: MyString
+  def_gw: MyString
+  vlan: 1
+  netmask: MyString
+  1dns: MyString
+  2dns: MyString
+  sw_port: 1
+  blocked: MyString
+  commnet: MyString
+
+two:
+  mac: MyString
+  ip: MyString
+  abon_id: 1
+  tp: MyString
+  def_gw: MyString
+  vlan: 1
+  netmask: MyString
+  1dns: MyString
+  2dns: MyString
+  sw_port: 1
+  blocked: MyString
+  commnet: MyString

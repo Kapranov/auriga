@@ -1,0 +1,16 @@
+class H2 < ActiveRecord::Base
+ def self.search(search, page)
+   paginate :per_page => 5, :page => page,
+     # ['title LIKE ? OR description LIKE ?', search_condition, search_condition]
+     #:conditions => ['abon_id like ?', "%#{search}%"], :order => 'abon_id'
+     # abon_id, mac,ip,vlan,port
+     :conditions => ['h2.abon_id like ? or h2.mac like ? or h2.ip like ? or h2.tp like ? or h2.sw_port like ? or h2.vlan like ? or h2.blocked like ?',"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%"], :order => 'abon_id'
+ end
+ #def self.search(search)
+ #  if search
+ #    where('name LIKE ?', "%#{search}%")
+ #  else
+ #    scoped
+ #  end
+ #end
+end

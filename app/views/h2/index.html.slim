@@ -1,0 +1,90 @@
+.nav class="navbar navbar-default navbar-fixed-top"
+  .navbar-header
+    button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+      span class="icon-bar"
+      span class="icon-bar"
+      span class="icon-bar"
+    a class="navbar-brand" href="/" = I18n.t 'Adamant'
+  .collapse
+  .navbar-collapse
+    .navbar-ex1-collapse
+      ul class="nav navbar-nav"
+        li
+          a href="#" = I18n.t 'Home'
+        li
+          a href="#about" = I18n.t 'About'
+        li
+          a href="#contact" = I18n.t 'Contact'
+        li class="dropdown"
+          a class="dropdown-toggle" data-toggle="dropdown" href="#"
+            = I18n.t 'Dropdown'
+            span class="caret" style="margin-left:10px"
+          ul class="dropdown-menu"
+            li
+              a href="#" = I18n.t 'Action1'
+            li
+              a href="#" = I18n.t 'Action2'
+            li
+              a href="#" = I18n.t 'Action3'
+            li class="divider"
+            li class="dropdown-header" = I18n.t 'nav_header'
+            li
+              a href="#" = I18n.t 'Action4'
+            li
+              a href="#" = I18n.t 'Action5'
+br
+br
+.container
+  .row
+    .col-xs-7
+      .input-group
+        .input-group-btn
+          button class="btn btn-info" type="button" id="search_button" onClick="parent.location='h2#index'"
+            span class="glyphicon glyphicon-search"
+        = form_tag h2_index_path, :method => 'get', :id => "h2_search" do
+          = text_field_tag :search, params[:search], :class => "form-control", :placeholder => "#{I18n.t 'Search_field'}"
+        javascript:
+          $("#h2_search").find("input[type=text], textarea").val("")
+  br
+  .row
+    .col-xs-12
+      table class="table table-striped table-bordered"
+        tr
+          th style="text-align: center;" = I18n.t 'Abon'
+          th style="text-align: center;" = I18n.t 'Blocked'
+          th style="text-align: center;" = I18n.t 'Mac'
+          th style="text-align: center;" = I18n.t 'Ip'
+          th style="text-align: center;" = I18n.t 'Tp'
+          th style="text-align: center;" = I18n.t 'Sw port'
+          th style="text-align: center;" = I18n.t 'Vlan'
+          th style="text-align: center;"
+            span
+              i class="glyphicon glyphicon-eye-open btn-lg" style="padding:0px"
+          th style="text-align: center;"
+            span
+              i class="glyphicon glyphicon-edit btn-lg" style="padding:0px"
+          th style="text-align: center;"
+            span
+              i class="glyphicon glyphicon-trash btn-lg" style="padding:0px"
+
+        - @h2.each do |h2|
+          tr
+            td = h2.abon_id
+            td
+              - if h2.blocked == false
+                div class="progress progress-striped active"
+                  div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%;border-radius:6px;-moz-box-shadow: 0 0 9 #888;"
+                    span class="sr-only"
+              - else
+                div class="progress progress-striped active"
+                  div class="progress-bar progress-bar-danger"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%;border-radius:6px;-moz-box-shadow: 0 0 9 #888;"
+                    span class="sr-only"
+            td = h2.mac
+            td = h2.ip
+            td = h2.tp
+            td = h2.sw_port
+            td = h2.vlan
+            td = link_to '', h2, :class => "btn glyphicon glyphicon-eye-open btn-lg green", :style => "padding:1px"
+            td = link_to '', edit_h2_path(h2), :class => "btn glyphicon glyphicon-edit btn-lg blue", :style => "padding:1px"
+            td = link_to '', h2, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-lg glyphicon glyphicon-trash red", :style => "padding:1px"
+      = will_paginate @h2, :container => true, :inner_window => 3, :outer_window => 2,:per_page => 10, :page_links => true, :renderer => "BootstrapPagination::Rails", :bootstrap => 3

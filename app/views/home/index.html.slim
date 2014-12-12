@@ -1,0 +1,96 @@
+body class="cbp-spmenu-push"
+  nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1"
+	  h3 Меню
+  nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2"
+	  h3 Меню
+  nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top" id="cbp-spmenu-s3"
+    h3 Меню
+  nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom" id="cbp-spmenu-s4"
+    h3 Меню
+  div class="container"
+    = image_tag("home_banner.jpg", :id => "background")
+    div class="jumbotron"
+    div class="block_animate"
+      a class="bootstrap-logo" href="/" title="Home"
+        = image_tag("apple-touch-icon-144-precomposed.png", :class => 'bootstrap-logo animated bounceIn', :alt => "test" )
+      /header class="masthead"
+        a class="bootstrap-logo" href="/" title="Home"
+          = image_tag("apple-touch-icon-144-precomposed.png", :class => 'bootstrap-logo animated bounceIn', :alt => "test" )
+    /div class="wrapper-center__content width-of-parent"
+      a href="/" class="btn animated fadeInDown" style="outline:0;color:white;font-size:16px;background:rgba(255, 255, 255, 0.102);border:2px solid #FFFFFF;line-height:42px;padding:0px28px;transition-duration:0.6s;transition-property:background-color;" Авторизация
+  div class="container"
+    div class="main"
+      section
+        button id="showLeft" = t("showLeft")
+        button id="showRight" = t("showRight")
+        button id="showTop" = t("showTop")
+        button id="showBottom"  = t("showBottom")
+        button class="animated rollIn" = t('Authorization')
+        /= link_to "<button>#{t('Authorization')}</button>".html_safe, h2_index_path, :id => "button_id", :class => "animated rollIn"
+  = javascript_include_tag "classie"
+  javascript:
+	  var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		  menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+			menuTop = document.getElementById( 'cbp-spmenu-s3' ),
+			menuBottom = document.getElementById( 'cbp-spmenu-s4' ),
+			showLeft = document.getElementById( 'showLeft' ),
+			showRight = document.getElementById( 'showRight' ),
+			showTop = document.getElementById( 'showTop' ),
+			showBottom = document.getElementById( 'showBottom' ),
+			showLeftPush = document.getElementById( 'showLeftPush' ),
+			showRightPush = document.getElementById( 'showRightPush' ),
+			body = document.body;
+
+		showLeft.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( menuLeft, 'cbp-spmenu-open' );
+			disableOther( 'showLeft' );
+		};
+		showRight.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( menuRight, 'cbp-spmenu-open' );
+			disableOther( 'showRight' );
+		};
+		showTop.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( menuTop, 'cbp-spmenu-open' );
+			disableOther( 'showTop' );
+		};
+		showBottom.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( menuBottom, 'cbp-spmenu-open' );
+			disableOther( 'showBottom' );
+		};
+		showLeftPush.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( body, 'cbp-spmenu-push-toright' );
+			classie.toggle( menuLeft, 'cbp-spmenu-open' );
+			disableOther( 'showLeftPush' );
+		};
+		showRightPush.onclick = function() {
+		  classie.toggle( this, 'active' );
+			classie.toggle( body, 'cbp-spmenu-push-toleft' );
+			classie.toggle( menuRight, 'cbp-spmenu-open' );
+			disableOther( 'showRightPush' );
+		};
+
+		function disableOther( button ) {
+		  if( button !== 'showLeft' ) {
+			  classie.toggle( showLeft, 'disabled' );
+			}
+			if( button !== 'showRight' ) {
+			  classie.toggle( showRight, 'disabled' );
+			}
+			if( button !== 'showTop' ) {
+			  classie.toggle( showTop, 'disabled' );
+			}
+			if( button !== 'showBottom' ) {
+			  classie.toggle( showBottom, 'disabled' );
+			}
+			if( button !== 'showLeftPush' ) {
+			  classie.toggle( showLeftPush, 'disabled' );
+			}
+			if( button !== 'showRightPush' ) {
+			  classie.toggle( showRightPush, 'disabled' );
+			}
+		}

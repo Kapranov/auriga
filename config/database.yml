@@ -1,0 +1,29 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  socket: /var/run/mysqld/mysqld.sock
+  host: <%= CONFIG[:db_host] %>
+  database: <%= CONFIG[:db_name] %>
+  username: <%= CONFIG[:db_login] %>
+  password: <%= CONFIG[:db_pwd] %>
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  socket: /var/run/mysqld/mysqld.sock
+  host: <%= CONFIG[:db_host] %>
+  database: <%= CONFIG[:db_name_test] %>
+  username: <%= CONFIG[:db_login_test] %>
+  password: <%= CONFIG[:db_pwd_test] %>
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  socket: /var/run/mysqld/mysqld.sock
+  host: <%= CONFIG[:db_host] %>
+  database: <%= CONFIG[:db_name_production] %>
+  username: <%= CONFIG[:db_login_production] %>
+  password: <%= CONFIG[:db_pwd_production] %>

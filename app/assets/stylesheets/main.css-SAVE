@@ -1,0 +1,118 @@
+body {
+  padding-top: 80px;
+  /* font: 100%/1.5 "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif; */
+  /* background: url("home_banner.jpg") repeat scroll 0 0 transparent; */
+  /* background: url("background.png") repeat scroll 0 0 transparent;  */
+  background: url("home_banner.jpg") repeat scroll 0 0 transparent;
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat:no-repeat;
+}
+
+.jumbotron {
+  /* background-image: url("http://parall.ax/parallax/img/backgrounds/home_banner.jpg");
+  background-repeat:no-repeat;
+  color: inherit;
+  */
+  background-color: #e1f6fb;
+  -moz-opacity: 0.1;
+  opacity:.80;
+  color: inherit;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.14;
+  margin-bottom: 30px;
+  padding: 50px;
+  -moz-background-size: 100% 100px;
+  -webkit-background-size: 100% 100px;
+  -webkit-border-radius: 26px;
+     -moz-border-radius: 26px;
+          border-radius: 26px;
+  -webkit-box-shadow: 0 2px 8px #e1f6fb;
+     -moz-box-shadow: 0 2px 8px #e1f6fb;
+          box-shadow: 0 2px 8px #e1f6fb;
+  -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+}
+
+.bootstrap-logo img {
+  margin: 0 auto;
+  border-radius: 26px;
+  box-shadow: 0px 2px 8px rgba(109, 51, 83, 0.149);
+  display: block;
+  transition: all 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0;
+  -webkit-border-radius: 26px;
+     -moz-border-radius: 26px;
+          border-radius: 26px;
+  -webkit-box-shadow: 0 2px 8px rgba(109,51,83,.15);
+     -moz-box-shadow: 0 2px 8px rgba(109,51,83,.15);
+          box-shadow: 0 2px 8px rgba(109,51,83,.15);
+  -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+}
+
+.bootstrap-logo:hover img {
+  -webkit-box-shadow: 0 2px 15px rgba(109,51,83,.75);
+     -moz-box-shadow: 0 2px 15px rgba(109,51,83,.75);
+          box-shadow: 0 2px 15px rgba(109,51,83,.75);
+}
+
+.masthead { 
+  margin-bottom: 84px;
+}
+
+header { 
+  display: block;
+}
+
+.bootstrap-logo {
+  margin: 0px auto 20px;
+  position: relative;
+}
+
+a {
+  color: #0088CC;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+h3 {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 650px;
+    width: 100%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+div {
+  animation-duration: 3s;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes divSlider {
+  from {
+    margin: 0 0 0 -35%;
+  }
+  to {
+    margin: 0;
+  }
+
+@-moz-keyframes divSlider {
+  from {
+    margin: 0 0 0 -35%;
+  }
+  to {
+    margin: 0;
+  }
+}

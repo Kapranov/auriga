@@ -1,0 +1,36 @@
+p#notice = notice
+
+p
+  strong Mac:
+  = @h2.mac
+p
+  strong Ip:
+  = @h2.ip
+p
+  strong Abon:
+  = @h2.abon_id
+p
+  strong Tp:
+  = @h2.tp
+p
+  strong Def gw:
+  = @h2.def_gw
+p
+  strong Vlan:
+  = @h2.vlan
+p
+  strong Netmask:
+  = @h2.netmask
+p
+  strong Sw port:
+  = @h2.sw_port
+p
+  strong Blocked:
+  = @h2.blocked
+p
+  strong Commnet:
+  = @h2.comment
+
+= link_to 'Edit', edit_h2_path(@h2)
+'|
+= link_to 'Back', h2_index_path

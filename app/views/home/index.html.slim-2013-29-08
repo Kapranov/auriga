@@ -1,0 +1,26 @@
+body class="page-home bg--white " style="min-width: 1230px;"
+  a href="/vacancies" class="now-hiring"
+  div id="body" class="soft-three-and-a-half--top"
+    a href="#main" style="display: none;" Skip to content
+    div style="position: relative; z-index: 1000;"
+      header class="main-header one-whole sticky sticky--top bg--white height--70p"
+        div class="push--top push-double--left float--left"
+          a href="/" class="block"
+            img src="http://parall.ax/parallax/img/logo.png" alt="Parallax" width="157" height="26"
+        nav class="float--right"
+          ul class="nav nav--header flush--bottom"
+            li
+              a class="soft--sides soft-one-and-a-quarter--ends text--grey-666 text--bold font-size--12 no-underline text--smooth height--70p" href="/" Work
+            li
+              a class="soft--sides soft-one-and-a-quarter--ends text--grey-666 text--bold font-size--12 no-underline text--smooth height--70p" href="/about" About
+            li
+              a class="soft--sides soft-one-and-a-quarter--ends text--grey-666 text--bold font-size--12 no-underline text--smooth height--70p" href="/services" Service
+            li class="position--relative"
+              a id="js-popout-parent" class="soft--sides soft-one-and-a-quarter--ends text--grey-666 text--bold font-size--12 no-underline text--smooth height--70p" href="/products/expose" Products
+        div class="cf"
+    div class="shadow"
+      section class="feature-banner feature-banner--home-banner text--center" id="js-resize-placeholder" style="height: 2000px;"
+        div class="feature-banner--home__wrapper wrapper pos--fixed top-70 width-of-parent touch--pos-relative"
+          div class="wrapper-center wrapper--six-sixty"
+            div class="wrapper-center__content width-of-parent fade-in-intro" style="display: none;"
+              div class="text--smooth font-size--40 text--white line-height--128pc push-one-and-a-half--bottom"

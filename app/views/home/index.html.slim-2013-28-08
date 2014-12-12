@@ -1,0 +1,6 @@
+div class="container"
+  div class="jumbotron"
+    h3 Тестовая страница
+    header class="masthead"
+      a class="bootstrap-logo" href="/" title="Home"
+        = image_tag("apple-touch-icon-144-precomposed.png", :class => 'bootstrap-logo animated bounceIn', :alt => "test" )

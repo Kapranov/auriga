@@ -1,0 +1,36 @@
+.navbar
+  .navbar-fixed-top
+    .navbar-inner
+      .container-fluid
+        .brand Адамант
+.container-fluid
+  .row-fluid
+    .span12
+      table class="table table-striped table-bordered"
+        tr
+          th Blocked
+          th Abon
+          th Mac
+          th Ip
+          th Tp
+          th Sw port
+          th Vlan
+          th
+          th
+          th
+
+        - @h2.each do |h2|
+          tr
+            td = h2.blocked
+            td = h2.abon_id
+            td = h2.mac
+            td = h2.ip
+            td = h2.tp
+            td = h2.sw_port
+            td = h2.vlan
+            td = link_to 'Show', h2
+            td = link_to 'Edit', edit_h2_path(h2)
+            td = link_to 'Destroy', h2, :confirm => 'Are you sure?', :method => :delete
+      br
+
+      = link_to 'New H2', new_h2_path
